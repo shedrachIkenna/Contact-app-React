@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Navbar from './components/ui/Navbar'
 
-const App = () => {
-  return (
-    <div className="App">
-      <h4>Hello world</h4>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+       <Navbar />
+      </div>
+    );
+  }
 }
 
 export default App;
