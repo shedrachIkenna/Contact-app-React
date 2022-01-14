@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ContactList from './components/contacts/ContactList'
 import Navbar from './components/ui/Navbar'
 
@@ -12,12 +12,19 @@ const App = () => {
   const handleDelete = (id) => {
     const newContacts = contacts.filter((contact) => contact.id !== id);
     setContacts(newContacts);
-
   }
+
+  useEffect(() => {
+    console.log('use Effect ran')
+  })
+
     return (
       <div className="App">
        <Navbar />
        <ContactList contacts={contacts} handleDelete={handleDelete}/>
+       <div className="container hide-on-large-only">
+       <a className="waves-effect waves-light btn"><i className="material-icons right">person_add</i>Add Contact</a>
+       </div>
       </div>
     );
 }

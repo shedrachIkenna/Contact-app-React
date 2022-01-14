@@ -1,6 +1,5 @@
 import user from '../../images/user.png'
 const ContactList = ({contacts, handleDelete}) => {
-    console.log(contacts)
     return (
         <div className="contactList">
             {
