@@ -1,12 +1,12 @@
-
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <nav className="teal lighten-2">
             <div className="nav-wrapper container">
-                <a href="#!" className="brand-logo">Contact-App</a>
+                <NavLink to="/" className="brand-logo">Contact-App</NavLink>
                 <ul className="right hide-on-med-and-down">
-                    <li><a href="badges.html"><i className="material-icons right">person_add</i>Add contact</a></li>
+                    <li><NavLink to="/add"><i className="material-icons right">person_add</i>Add contact</NavLink></li>
                 </ul>
             </div>
         </nav>

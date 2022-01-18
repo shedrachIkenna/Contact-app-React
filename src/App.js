@@ -1,31 +1,25 @@
-import { useState, useEffect } from 'react'
-import ContactList from './components/contacts/ContactList'
+
+import Contact from './components/contacts/Contacts'
 import Navbar from './components/ui/Navbar'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import AddContact from './components/contacts/AddContact';
 
 const App = () => {
-  const [contacts, setContacts] = useState([
-    {id:1 , name:'Shedrach', number:'08039646573', email:'shedrach686@gmail.com'},
-    {id:2 , name:'Lukaku', number:'08039646573', email:'Luks@gmail.com'},
-    {id:3 , name:'Hazard', number:'08039646573', email:'Hazard@gmail.com'}
-  ])
-
-  const handleDelete = (id) => {
-    const newContacts = contacts.filter((contact) => contact.id !== id);
-    setContacts(newContacts);
-  }
-
-  useEffect(() => {
-    console.log('use Effect ran')
-  })
 
     return (
-      <div className="App">
-       <Navbar />
-       <ContactList contacts={contacts} handleDelete={handleDelete}/>
-       <div className="container hide-on-large-only">
-       <a className="waves-effect waves-light btn"><i className="material-icons right">person_add</i>Add Contact</a>
-       </div>
-      </div>
+      <Router>
+        <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Contact />
+          </Route>
+          <Route path="/add">
+            <AddContact />
+          </Route>
+        </Switch>
+        </div>
+      </Router>
     );
 }
 
