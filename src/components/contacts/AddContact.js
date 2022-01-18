@@ -41,7 +41,6 @@ const handleSubmit = (e) => {
         />
         <button className="btn waves-effect waves-light addButton">Add Contact</button>
       </form>
-      <p>{id}</p>
     </div>
   )
 }
